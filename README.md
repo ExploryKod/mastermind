@@ -11,6 +11,6 @@ Je pourrais aussi augmenter ma compréhension du vanilla Javascript. A ce stade,
 
 Je vous laisse découvrir le projet et je suis preneurs de tous les conseils que vous pouvez me donner au cours de l'évolution du code sur ce repository.
 
-La première version est tout juste fonctionnelle. Elle pose un problème sur la génération des couleurs via l'IA : ce dernier peut parfois générer une couleur "undefined" alors oui si c'est le cas vous n'aviez aucune chance de gagner ! Ce sont les joies du code et je vais bien sûr régler ce problème. J'aurais ainsi augmenté ma compréhension du langage grâce aux bugs. Je les accueille avec plaisir car ils me permettent de comprendre ce qui se passe dans l'opacité du système. 
+La première version est tout juste fonctionnelle. Elle pose un problème sur la génération des couleurs via l'IA : cette dernière peut parfois générer une couleur "undefined". Si c'est le cas vous n'aviez aucune chance de gagner contre l'IA! Ce sont les joies du code et je vais bien sûr régler ce problème. J'aurais ainsi augmenté ma compréhension du langage grâce aux bugs. Je les accueille avec plaisir car ils me permettent de comprendre ce qui se passe dans l'opacité du système. 
 
 Amaury
