@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta title="Mastermind" description="Un jeu de mastermind pour passer le temps">
+    <link rel="stylesheet" href="style.css">
+    <title>Mastermind</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li id="grid_li_1"><a href="#">règles du jeu</a></li>
+                <li id="grid_li_2"><a href="#">Scores</a></li>
+                <li id="grid_li_3"><a href="#">contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="main_grid_1">
+            <h1>Bienvenue sur le mastermind</h1>
+            <p> En solitaire ou en équipe, le mastermind est toujours un plaisir, invitez-vous à la fête ! A vous de trouver les quatres couleurs dans le bon ordre choisis par l'ordinateur.</p>
+        </section>
+
+        <section id="choices-container">
+
+            <article id="titre_choix">
+                <h2>Choississez 4 couleurs en validant vos choix: </h2>
+            </article>
+        
+        <form id="form-container">
+            <article id="form_choix_1">   
+                    <label for="couleur_1">Première couleur:</label>
+                    <select name="player-values" id="couleur_1" size="1">
+                    <option value="orange">orange</option>
+                    <option value="blue">bleu</option>
+                    <option value="green">vert</option>
+                    <option value="red">rouge</option>
+                    </select>  
+            </article>
+
+            <article id="form_choix_2">
+                    <label for="couleur_2">Seconde couleur:</label>
+                    <select name="player-values" id="couleur_2" size="1">
+                    <option value="orange">orange</option>
+                    <option value="blue">bleu</option>
+                    <option value="green">vert</option>
+                    <option value="red">rouge</option>
+                    </select>      
+                </article>
+            <article id="form_choix_3">    
+                    <label for="couleur_3">Troisième couleur:</label>
+                    <select name="player-values" id="couleur_3" size="1">
+                    <option value="orange">orange</option>
+                    <option value="blue">bleu</option>
+                    <option value="green">vert</option>
+                    <option value="red">rouge</option>
+                    </select>    
+            </article>
+
+            <article id="form_choix_4">
+                    <label for="couleur_4">Quatrième couleur:</label>
+                    <select name="player-values" id="couleur_4" size="1">
+                    <option value="orange">orange</option>
+                    <option value="blue">bleu</option>
+                    <option value="green">vert</option>
+                    <option value="red">rouge</option>
+                    </select>  
+            </article>
+            
+            <article id="form-input">
+            <button type="button" id="go-ia">Génerer un jeu</button>
+            <button type="button" id="go">Valider votre séquence</button>
+            <button type="button" id="go-reveal">Réveler le jeu</button>
+            </article>
+
+        </form>
+
+    </section>
+
+    <section id="main_grid_3">
+
+        <article id="user-result">
+            <h2>Vos couleurs:</h2>
+            <div id="conteneur-voscouleurs">
+                <div id="voscouleurs-1"></div>
+                <div id="voscouleurs-2"></div>
+                <div id="voscouleurs-3"></div>
+                <div id="voscouleurs-4"></div>
+            </div> 
+        </article>
+
+        <article id="ia-result">
+            <h2>Couleurs de l'IA:</h2>
+            <div id="conteneur-IAcouleurs">
+                <div id="IAcouleurs-1"></div>
+                <div id="IAcouleurs-2"></div>
+                <div id="IAcouleurs-3"></div>
+                <div id="IAcouleurs-4"></div>
+            </div>
+        </article>
+
+        <article id="win-message">
+            <button type="button" id="score-reveal">Afficher le score</button>
+            <h1 id="h1-message">Votre Score de bonnes couleurs: </h1>
+            <div id="conteneur-score">
+            <p id="playerScore"></p>
+            </div>
+        </article>
+        
+    </section>
+        
+        <footer>
+            <h3>Crédits</h3>
+            <h3>Mentions légales</h3>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+<!-- Connaître l'option choisie par l'utilisateur grâce à JavaScript
+Pour utiliser select en JavaScript, et savoir quelle option l'utilisateur a choisie, on utilise l'attribut selectedIndex (défini dans DOM).
+Si la balise select a pour nom "couleur", l'instruction suivante affiche le numéro de l'option choisie, en partant de zéro:
+
+document.forms[0].couleur.selectedIndex;
+Et pour accéder aux valeurs, avec le tableau options:
+
+var object = document.forms[0].couleur;
+var index = object.selectedIndex;
+var value =  object.options[index].value;
+var content = object.options[index].text;
+On peut aussi choisir une option à partir de code JavaScript:
+
+document.forms[0].couleur.selectedIndex = 3; 
+La gestion dynamique des listes en JavaScript est développée dans l'article Select dynamique.
+
+
+
+Le code JavaScript:
+
+function receive()
+{
+  var parameters = location.search.substring(1).split("&");
+  var temp = parameters[0].split("=");
+  varname = unescape(temp[0]);
+  if(varname == "") return;
+  value = unescape(temp[1]);
+  alert(varname + "=" + value);
+}
+window.onload=receive;
+Le code HTML avec la méthode GET pour avoir les données de formulaire dans l'URL:
+
+<form name="form1" method="get" action="select.php">
+  <select name="couleur" id="couleur" multiple size="4">
+    <option>orange</option>
+    <option selected>bleu</option>
+    <option>vert</option>
+    <option>rouge</option>
+  </select>
+  <input type="submit" value="Envoyer">
+  <input type="button" value="Javascript" onClick="show()">
+</form>-->

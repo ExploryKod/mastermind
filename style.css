@@ -1,0 +1,369 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+/* font-family: 'Lato', sans-serif; */
+
+:root {
+    --color_red :rgb(249, 7, 22);
+    --color_orange:rgb(255, 84, 3);
+    --color_yellow:rgb(255, 202, 3);
+    --color_moreyellow:rgb(255, 243, 35);
+    --text_black:rgb(38, 0, 27);
+    --text_light:rgb(255, 245, 183);
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Commentaire apprendre : le body n'ayant pas d'élement parent, mettre le height du body à 100 vh permet d'éviter l'écrasement. Fixe le body à une certaine hauteur.
+Aussi : mettre des colonnes/row fixes permet d'éviter des chevauchement, mettre des % représente un risque dans les chevauchements. */
+body {
+    height:400vh;
+    width:100%;
+    font-family: 'Lato', 'sans-serif';
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    background-color: var(--color_red);
+    align-content: start;
+    
+}
+
+header {
+    background-color: var(--color_red);
+    height:8vh;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    align-self: center;
+}
+
+main {
+    background-color: var(--color_yellow);
+    grid-column:1;
+    grid-row:2;   
+    width:auto; 
+}
+
+footer {
+    background-color: var(--text_black);
+    color:var(--text_light);
+    grid-column:1;
+    grid-row:3;
+}
+
+/* Nav-bar */
+
+/* <header>
+<nav>
+    <ul>
+        <li><a href="#">règles du jeu</a></li>
+        <li><a href="#">Scores</a></li>
+        <li><a href="#">contact</a></li>
+    </ul>
+</nav>
+</header> */
+
+nav {
+    width:100%;
+    margin:1vh auto;
+    margin:1vh auto;
+    position:relative;
+    left:2vw;
+    max-height: 1.5rem;
+    min-height: 1rem;
+    
+}
+ul {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#grid_li_1 {
+    grid-column: 1;
+    border: 0.2em solid var(--color_orange);
+    border-radius: 1em;
+    text-align: center;
+}
+
+#grid_li_2 {
+    grid-column: 2;
+    border: 0.2em solid var(--color_orange);
+    border-radius: 1em;
+    margin: 2px 10%;
+    text-align: center;
+}
+
+#grid_li_3 {
+    grid-column: 3;
+    border: 0.2em solid var(--color_orange);
+    border-radius: 1em;
+    margin: 2px 10%;
+    text-align: center;
+}
+
+li, a {
+    list-style: none;
+    text-decoration:none;
+    color: var(--color_yellow);
+    
+    font-weight: 700;
+    font-size: 1.2em;
+    hyphens:auto;
+}
+
+/* MAIN */
+
+
+#main_grid_1 {
+  text-align: center;  
+} 
+
+
+
+#choices-container {
+    grid-row:2;
+    /* border:0.5em solid var(--color_red); */
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    height:30vh; 
+    margin: 0 auto;   
+}
+
+label {
+    text-align: center;
+    font-weight: 700;
+    color: var(--text_black);
+}
+
+select {
+    display:block;
+    position:relative;
+    margin:15px auto;
+    border-radius:30px;
+    background-color: white; 
+    color: var(--text_black);
+    cursor:pointer;
+}
+
+#titre_choix {
+    /* border:1px solid black; */
+    padding:1em;
+}
+
+#form-container {
+    display:grid;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-rows: auto auto;
+    grid-gap:0.3em;
+    justify-content: center;
+    align-content: center;
+}
+
+#form_choix_1 {
+    background-color: var(--color_orange);
+    border-radius: 20px;
+    padding:1em;
+    grid-column: 1;
+    grid-row: 1;
+   
+}
+
+#form_choix_2 {
+    background-color: var(--color_orange);
+    border-radius: 20px;
+    padding:1em;
+    grid-column: 2;
+    grid-row:1;
+}
+#form_choix_3 {
+    background-color: var(--color_orange);
+    border-radius: 20px;
+    padding:1em;
+    grid-column: 3;
+    grid-row:1;
+}
+#form_choix_4 {
+    background-color: var(--color_orange);
+    border-radius: 20px;
+    padding:1em;
+    grid-column: 4;
+    grid-row:1;
+}
+
+#form-input{
+    display:flex;
+    padding:0.2em;
+    grid-column:1 / span 4;
+    grid-row:2;
+    justify-self: center; 
+    align-self: start;     
+}
+
+
+/* MAIN-GRID 3 */
+
+/* <section id="main_grid_3">
+<article id="user-result">
+    <h2>Vos couleurs</h2>
+    <div id="conteneur-voscouleurs">
+        <div id="voscouleurs-1"></div>
+        <div id="voscouleurs-2"></div>
+        <div id="voscouleurs-3"></div>
+        <div id="voscouleurs-4"></div>
+    </div> 
+</article>
+<article class="ia-result">
+    <h2>Couleurs à trouver</h2>
+</article>
+<article id="win-message">
+    <h1 id="h1-message">Votre Score de bonnes couleurs: </h1>
+    <ul id="playerScore">
+    </ul>
+</article>
+</section> */
+
+
+#main_grid_3 {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: auto;
+    margin: 3em 3em;
+    width: 100%; 
+    grid-gap:3px; 
+}
+
+#user-result {
+    grid-column: 1;
+    justify-self: center;
+    align-self: start;
+}
+
+
+#win-message {
+    border: 1px solid red;
+    padding: 1em; 
+    grid-column: 2;
+    grid-row:1;
+    justify-self: center;
+    align-self: center;
+
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#ia-result {
+    grid-column: 3;  
+    justify-self: center;
+    align-self: start;
+}
+
+/* Affichage couleurs de l'utilisateur */
+
+#conteneur-voscouleurs {
+    display:grid;
+    border:3px solid var(--color_red);
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: 204px;
+    grid-gap:1px;
+    margin: 20px auto;
+}
+
+#voscouleurs-1 {
+    background-color: white;
+    grid-column : 1;
+}
+
+#voscouleurs-2 {
+    background-color: white;
+    grid-column: 2;
+}
+#voscouleurs-3 {
+    background-color: white;
+    grid-column: 3;
+}
+#voscouleurs-4 {
+    background-color: white;
+    grid-column: 4;
+}
+
+/* Affichage couleurs de l'IA */
+
+#conteneur-IAcouleurs {
+    display:grid;
+    border:3px solid var(--color_red);
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: 204px;
+    grid-gap:1px;
+    margin: 20px auto;
+}
+
+#IAcouleurs-1 {
+    background-color: white;
+    grid-column : 1;
+
+}
+
+#IAcouleurs-2 {
+    background-color: white;
+    grid-column: 2;
+}
+#IAcouleurs-3 {
+    background-color: white;
+    grid-column: 3;
+}
+#IAcouleurs-4 {
+    background-color: white;
+    grid-column: 4;
+}
+
+/* Player score (3rd grid-item of main-grid-3)*/
+/* <article id="win-message">
+<h1 id="h1-message">Votre Score de bonnes couleurs: </h1>
+<div id="playerScore">
+</div>
+</article> */
+
+#conteneur-score {
+    display:block;
+    border: 2px solid var(--text_black);
+    height:50px;
+    width:50px;
+    border-radius:25px;
+    margin: 0 auto;
+    
+}
+
+#playerScore {
+    font-weight: 900;
+    font-size: 1em;
+    text-align: center;
+
+}
+
+/* Options customizing */
+
+.orange {
+    background-color: orange;
+}
+
+/* input customizing */
+
+button {
+    position:relative;
+    margin:1em;
+    padding:0.5em;
+    border: 0.2em solid white;
+    border-radius:20px;
+    background-color: var(--color_orange);
+    color: white;
+    font-weight: 700;
+    
+}
