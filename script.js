@@ -1,7 +1,7 @@
 
 console.log("VALUES BY IA");
 
-let iacouleurs = ["orange","green","red","blue","blue","orange","green"];
+let iacouleurs = ["orange","green","red","blue","grey","purple","teal","yellow","pink","brown","black"];
 // On définit la séquence de l'IA (secret).
 console.log(iacouleurs);
 
