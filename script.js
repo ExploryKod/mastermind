@@ -23,11 +23,6 @@ function randomSequence() {
         
 }
 
-// Récupérer la séquence de l'utilisateur
-
-// Fonction qui servira à récupérer une valeur dans le DOM. 
-
-
 // Evenements lors du clic sur les boutons de validation : à chaque clic on stock la valeur choisie.
 
 console.log("VALUES BY USER");
@@ -79,7 +74,7 @@ function compareDatas() {
             userScore += 1;
             
         } else {
-            console.log("perdu");
+            userScore += 0;
         }
 
         console.log("========USER DATAS EACH ROUND");

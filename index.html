@@ -9,28 +9,27 @@
     <title>Mastermind</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li id="grid_li_1"><a href="#">règles du jeu</a></li>
-                <li id="grid_li_2"><a href="#">Scores</a></li>
-                <li id="grid_li_3"><a href="#">contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    
     <main>
         <section id="main_grid_1">
+            <article>
             <h1>Bienvenue sur le mastermind</h1>
             <p> En solitaire ou en équipe, le mastermind est toujours un plaisir, invitez-vous à la fête ! A vous de trouver les quatres couleurs dans le bon ordre choisis par l'ordinateur.</p>
+            </article>
+            <section>
+                <img src="ressources/sarah-arista-w_sSb1coQkE-unsplash.jpeg" alt="photo de pots de peintures">
+            </section>    
         </section>
 
-        <section id="choices-container">
+        
+
+        <section id="main_grid_2">
 
             <article id="titre_choix">
                 <h2>Choississez 4 couleurs en validant vos choix: </h2>
             </article>
         
-        <form id="form-container">
+         <form>
             <article id="form_choix_1">   
                     <label for="couleur_1">Première couleur:</label>
                     <select name="player-values" id="couleur_1" size="1">
@@ -141,8 +140,9 @@
     </section>
         
         <footer>
-            <h3>Crédits</h3>
-            <h3>Mentions légales</h3>
+            
+            <div><a href="https://github.com/ExploryKod/mastermind"><img src="ressources/GitHub_Logo.png" alt="See on Github"></a></div>
+            <p> Created by Amaury Franssen <span>&#169</span> 2022  </p>
         </footer>
 
     </main>

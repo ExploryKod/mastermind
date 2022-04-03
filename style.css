@@ -1,14 +1,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 /* font-family: 'Lato', sans-serif; */
-
+/* Photo by Sarah Arista</a> on <a href="https://unsplash.com/s/photos/colorful?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+   */
 :root {
-    --color_red :rgb(249, 7, 22);
+    --color_background :rgb(252, 243, 237);
     --color_orange:rgb(255, 84, 3);
     --color_yellow:rgb(255, 202, 3);
     --color_moreyellow:rgb(255, 243, 35);
     --text_black:rgb(38, 0, 27);
-    --text_light:rgb(255, 245, 183);
+    --light:rgb(255, 245, 183);
 
 
 }
@@ -17,121 +18,75 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: var(--color_background);
 }
 /* Commentaire apprendre : le body n'ayant pas d'élement parent, mettre le height du body à 100 vh permet d'éviter l'écrasement. Fixe le body à une certaine hauteur.
 Aussi : mettre des colonnes/row fixes permet d'éviter des chevauchement, mettre des % représente un risque dans les chevauchements. */
 body {
-    height:400vh;
+    height:200vh;
     width:100%;
-    font-family: 'Lato', 'sans-serif';
-    display:grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    background-color: var(--color_red);
-    align-content: start;
-    
-}
-
-header {
-    background-color: var(--color_red);
-    height:8vh;
-    grid-column: 1;
-    grid-row: 1;
-    align-self: center;
-    align-self: center;
-}
-
-main {
-    background-color: var(--color_yellow);
-    grid-column:1;
-    grid-row:2;   
-    width:auto; 
+    font-family: 'Orkney', 'sans-serif';
+    line-height: 1.5;
 }
 
 footer {
-    background-color: var(--text_black);
-    color:var(--text_light);
-    grid-column:1;
-    grid-row:3;
+    text-decoration: none;
+    color:var(--text-black);
+    grid-column:2;
+    grid-row:5;
+
+    display: flex;
+    justify-content: space-between;
 }
 
-/* Nav-bar */
-
-/* <header>
-<nav>
-    <ul>
-        <li><a href="#">règles du jeu</a></li>
-        <li><a href="#">Scores</a></li>
-        <li><a href="#">contact</a></li>
-    </ul>
-</nav>
-</header> */
-
-nav {
-    width:100%;
-    margin:1vh auto;
-    margin:1vh auto;
-    position:relative;
-    left:2vw;
-    max-height: 1.5rem;
-    min-height: 1rem;
-    
-}
-ul {
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-#grid_li_1 {
-    grid-column: 1;
-    border: 0.2em solid var(--color_orange);
-    border-radius: 1em;
-    text-align: center;
-}
-
-#grid_li_2 {
-    grid-column: 2;
-    border: 0.2em solid var(--color_orange);
-    border-radius: 1em;
-    margin: 2px 10%;
-    text-align: center;
-}
-
-#grid_li_3 {
-    grid-column: 3;
-    border: 0.2em solid var(--color_orange);
-    border-radius: 1em;
-    margin: 2px 10%;
-    text-align: center;
-}
-
-li, a {
-    list-style: none;
-    text-decoration:none;
-    color: var(--color_yellow);
-    
-    font-weight: 700;
-    font-size: 1.2em;
-    hyphens:auto;
+footer img {
+    width:5em;
+    height: auto;
 }
 
 /* MAIN */
 
 
+main {
+      display:grid;
+      grid-template-columns: 10vw 80vw 10vw;
+      grid-template-rows: 100vh 40vh 40vh 5vh 5vh;
+    
+      align-content: start;
+}
+
 #main_grid_1 {
-  text-align: center;  
-} 
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 40vw 40vw;
+}
+
+#main_grid_1 article {
+    grid-column:1;
+}
+
+#main_grid_1 section {
+    width: 20vw;
+    grid-column:2;
+    grid-row:1;
+    margin: 0 auto;
+}
+
+#main_grid_1 section img {
+    width: 25vw;
+    height:auto;
+}
 
 
-
-#choices-container {
+#main_grid_2 {
+    grid-column: 2;
     grid-row:2;
     /* border:0.5em solid var(--color_red); */
     display:flex;
-    flex-direction: column;
-    align-items: center;
+    flex-flow: column wrap;
+    align-items:center;
     width:100%;
-    height:30vh; 
+    height:50vh; 
     margin: 0 auto;   
 }
 
@@ -145,10 +100,19 @@ select {
     display:block;
     position:relative;
     margin:15px auto;
+    padding:0.2rem;
     border-radius:30px;
-    background-color: white; 
+    background-color: transparent; 
+    border: 1px solid yellowgreen;
+    border-top: 2px solid yellowgreen;
     color: var(--text_black);
+    
     cursor:pointer;
+    text-align:center;
+}
+
+select:focus {
+    outline:none;
 }
 
 #titre_choix {
@@ -156,53 +120,60 @@ select {
     padding:1em;
 }
 
-#form-container {
+form {
+    width:100%;
     display:grid;
-    grid-template-columns: 100px 100px 100px 100px;
+    grid-template-columns: 12em 12em 12em 12em;
     grid-template-rows: auto auto;
-    grid-gap:0.3em;
+    gap:1em;
     justify-content: center;
     align-content: center;
 }
 
 #form_choix_1 {
-    background-color: var(--color_orange);
+    /* background-color: var(--light); */
+   
     border-radius: 20px;
     padding:1em;
     grid-column: 1;
     grid-row: 1;
+    text-align: center;
    
 }
 
 #form_choix_2 {
-    background-color: var(--color_orange);
+
     border-radius: 20px;
     padding:1em;
     grid-column: 2;
     grid-row:1;
+    text-align: center;
 }
 #form_choix_3 {
-    background-color: var(--color_orange);
+
     border-radius: 20px;
     padding:1em;
     grid-column: 3;
     grid-row:1;
+    text-align: center;
 }
 #form_choix_4 {
-    background-color: var(--color_orange);
+ 
     border-radius: 20px;
     padding:1em;
     grid-column: 4;
     grid-row:1;
+    text-align: center;
 }
 
 #form-input{
     display:flex;
-    padding:0.2em;
+    padding:0.5em;
     grid-column:1 / span 4;
     grid-row:2;
     justify-self: center; 
-    align-self: start;     
+    align-self: start;
+    text-align: center;     
 }
 
 
@@ -230,10 +201,12 @@ select {
 
 
 #main_grid_3 {
+    grid-column: 2;
+    grid-row: 3;
     display:grid;
     grid-template-columns: repeat(3, 1fr);
     height: auto;
-    margin: 3em 3em;
+    
     width: 100%; 
     grid-gap:3px; 
 }
@@ -244,9 +217,13 @@ select {
     align-self: start;
 }
 
+#user-result div div {
+    border: 2px solid yellowgreen;
+    border-radius: 1em 0.5em;
+}
 
 #win-message {
-    border: 1px solid red;
+    border: 1px solid yellowgreen;
     padding: 1em; 
     grid-column: 2;
     grid-row:1;
@@ -265,32 +242,37 @@ select {
     align-self: start;
 }
 
+#ia-result div div {
+    border: 2px solid yellowgreen;
+    border-radius: 1em 0.5em;
+}
+
 /* Affichage couleurs de l'utilisateur */
 
 #conteneur-voscouleurs {
     display:grid;
-    border:3px solid var(--color_red);
+    height: auto;
     grid-template-columns: 50px 50px 50px 50px;
-    grid-template-rows: 204px;
-    grid-gap:1px;
+    grid-template-rows: 5rem;
+    grid-gap:0.8em;
     margin: 20px auto;
 }
 
 #voscouleurs-1 {
-    background-color: white;
+    background-color: var(--light);
     grid-column : 1;
 }
 
 #voscouleurs-2 {
-    background-color: white;
+    background-color: var(--light);
     grid-column: 2;
 }
 #voscouleurs-3 {
-    background-color: white;
+    background-color: var(--light);
     grid-column: 3;
 }
 #voscouleurs-4 {
-    background-color: white;
+    background-color: var(--light);
     grid-column: 4;
 }
 
@@ -298,29 +280,29 @@ select {
 
 #conteneur-IAcouleurs {
     display:grid;
-    border:3px solid var(--color_red);
+  
     grid-template-columns: 50px 50px 50px 50px;
-    grid-template-rows: 204px;
-    grid-gap:1px;
+    grid-template-rows: 5rem;
+    grid-gap:0.8em;
     margin: 20px auto;
 }
 
 #IAcouleurs-1 {
-    background-color: white;
+    background-color: var(--light);
     grid-column : 1;
 
 }
 
 #IAcouleurs-2 {
-    background-color: white;
+    background-color: var(--light);
     grid-column: 2;
 }
 #IAcouleurs-3 {
-    background-color: white;
+    background-color: var(--light);
     grid-column: 3;
 }
 #IAcouleurs-4 {
-    background-color: white;
+    background-color: var(--light);
     grid-column: 4;
 }
 
@@ -332,20 +314,21 @@ select {
 </article> */
 
 #conteneur-score {
-    display:block;
+    display:flex;
+    justify-content: center;
+    align-items: center;
     border: 2px solid var(--text_black);
-    height:50px;
-    width:50px;
-    border-radius:25px;
-    margin: 0 auto;
+    height:5rem;
+    width:5rem;
+    border-radius: 2.5rem;
+    margin: 20px auto;
     
 }
 
+
 #playerScore {
     font-weight: 900;
-    font-size: 1em;
-    text-align: center;
-
+    font-size: 1.5em;
 }
 
 /* Options customizing */
@@ -367,3 +350,4 @@ button {
     font-weight: 700;
     
 }
+
