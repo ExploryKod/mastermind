@@ -65,6 +65,26 @@ main {
     grid-column:1;
 }
 
+#main_grid_1 article h1 {
+    margin-top: 2rem;
+    font-size: 36px;
+    line-height: 1.5;
+}
+
+#main_grid_1 article p {
+    margin-top:1em;
+    line-height: 1.5;
+}
+
+#main_grid_1 article a button {
+    padding:1em;
+    position: relative;
+    left:50%;
+    right:50%;
+    top:20%;
+    bottom:50%;
+}
+
 #main_grid_1 section {
     width: 20vw;
     grid-column:2;
@@ -348,6 +368,7 @@ button {
     background-color: var(--color_orange);
     color: white;
     font-weight: 700;
+    cursor: pointer;
     
 }
 

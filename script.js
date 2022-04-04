@@ -88,7 +88,8 @@ function compareDatas() {
     document.getElementById("playerScore").innerHTML=userScore;
 }
 
-document.querySelector("#go-ia").onclick = randomSequence;
+document.querySelector("#go-ia-1").onclick = randomSequence;
+document.querySelector("#go-ia-2").onclick = randomSequence;
 document.querySelector("#go").onclick = userSequenceInputs;
 document.querySelector("#score-reveal").onclick = compareDatas;
 // Comme je ne peux pas mettre de paramètres dans la 1ère fonction (du type on/off pour l'affichage des données) (ou dumoins pas directement comme on ferait sans callback) alors je créé une autre fonction.
