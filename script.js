@@ -1,4 +1,6 @@
 
+playerScoreInfo = document.getElementById("playerScore");
+conteneurScore = document.querySelector("#conteneur-score")
 console.log("VALUES BY IA");
 
 let iacouleurs = ["orange","green","red","blue","grey","purple","teal","yellow","pink","brown","black"];
@@ -85,7 +87,10 @@ function compareDatas() {
 
     console.log("----------User Score ---------");
     console.log(userScore);
-    document.getElementById("playerScore").innerHTML=userScore;
+    playerScoreInfo.innerHTML=userScore;
+    conteneurScore.style.backgroundColor = "var(--light)";
+    playerScoreInfo.style.backgroundColor = "var(--light)";
+
 }
 
 document.querySelector("#go-ia-1").onclick = randomSequence;

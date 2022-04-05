@@ -5,12 +5,12 @@
    */
 :root {
     --color_background :rgb(252, 243, 237);
-    --color_orange:rgb(255, 84, 3);
+    --color-orange:rgb(247, 199, 177);
     --color_yellow:rgb(255, 202, 3);
     --color_moreyellow:rgb(255, 243, 35);
     --text_black:rgb(38, 0, 27);
     --light:rgb(255, 245, 183);
-
+    --CTA_color : rgb(78, 110, 21);
 
 }
 
@@ -56,7 +56,7 @@ main {
 }
 
 #main_grid_1 {
-    grid-column: 2;
+    grid-column: 2 / span 2;
     display: grid;
     grid-template-columns: 40vw 40vw;
 }
@@ -87,14 +87,17 @@ main {
 
 #main_grid_1 section {
     width: 20vw;
-    grid-column:2;
+    grid-column:2 / span 2;
     grid-row:1;
     margin: 0 auto;
 }
 
 #main_grid_1 section img {
-    width: 25vw;
-    height:auto;
+    width: auto;
+    height: 100vh;
+    justify-self: end;
+    margin:0;
+    padding:0;
 }
 
 
@@ -138,6 +141,7 @@ select:focus {
 #titre_choix {
     /* border:1px solid black; */
     padding:1em;
+    margin-top: 1em;
 }
 
 form {
@@ -238,12 +242,14 @@ form {
 }
 
 #user-result div div {
-    border: 2px solid yellowgreen;
+    border: 2px solid rgb(230, 228, 228);
     border-radius: 1em 0.5em;
 }
 
 #win-message {
-    border: 1px solid yellowgreen;
+    /* border: 1px solid rgb(230, 228, 228); */
+    border-radius: 8px;
+    background-color: var(--light);
     padding: 1em; 
     grid-column: 2;
     grid-row:1;
@@ -256,6 +262,10 @@ form {
     align-content: center;
 }
 
+#h1-message {
+    background-color: var(--light);
+}
+
 #ia-result {
     grid-column: 3;  
     justify-self: center;
@@ -263,7 +273,7 @@ form {
 }
 
 #ia-result div div {
-    border: 2px solid yellowgreen;
+    border: 2px solid rgb(230, 228, 228);
     border-radius: 1em 0.5em;
 }
 
@@ -337,7 +347,7 @@ form {
     display:flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid var(--text_black);
+    border: 2px solid var(--CTA_color);
     height:5rem;
     width:5rem;
     border-radius: 2.5rem;
@@ -345,27 +355,27 @@ form {
     
 }
 
+#conteneur-score:hover, #player-score:hover {
+    
+    cursor:pointer;
+}
 
 #playerScore {
     font-weight: 900;
     font-size: 1.5em;
+    color: var(--CTA_color)
 }
 
-/* Options customizing */
-
-.orange {
-    background-color: orange;
-}
 
 /* input customizing */
 
 button {
     position:relative;
     margin:1em;
-    padding:0.5em;
+    padding:0.8em;
     border: 0.2em solid white;
-    border-radius:20px;
-    background-color: var(--color_orange);
+    border-radius:10px;
+    background-color: var(--CTA_color);
     color: white;
     font-weight: 700;
     cursor: pointer;
