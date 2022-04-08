@@ -13,10 +13,11 @@
     --color_background :rgb(252, 243, 237);
     --color-orange:rgb(247, 199, 177);
     --color_yellow:rgb(255, 202, 3);
-    --color_moreyellow:rgb(255, 243, 35);
+    --color_more-yellow:rgb(255, 243, 35);
     --text_black:rgb(38, 0, 27);
     --light:rgb(255, 245, 183);
     --CTA_color : rgb(78, 110, 21);
+    --select-button: yellowgreen;
 }
 
 * {
@@ -113,8 +114,8 @@ select {
     padding:0.2rem;
     border-radius:30px;
     background-color: transparent; 
-    border: 1px solid yellowgreen;
-    border-top: 2px solid yellowgreen;
+    border: 1px solid var(--select-button) ;
+    border-top: 2px solid var(--select-button);
     color: var(--text_black);
     
     cursor:pointer;
@@ -220,6 +221,7 @@ form {
 
 #h1-message {
     background-color: var(--light);
+    margin: 0 auto;
 }
 
 /* Showing user and IA colors : containment boxes */
@@ -302,8 +304,8 @@ form {
     display:flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid var(--color-orange);
-    background-color: var(--color-orange);
+    border: 2px solid var(--CTA_color);
+    background-color: var(--color_more-yellow);
     height:5rem;
     width:5rem;
     border-radius: 2.5rem;
