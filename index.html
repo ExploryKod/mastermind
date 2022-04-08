@@ -14,19 +14,21 @@
 
     <main>
         <section id="main_grid_1">
+
             <article>
                 <h1>Bienvenue sur le mastermind</h1>
                 <p> En solitaire ou en équipe, le mastermind est toujours un plaisir, invitez-vous à la fête ! A vous de
                     trouver les quatres couleurs dans le bon ordre choisis par l'ordinateur.</p>
                 <a href="#main_grid_2"><button type="button" id="go-ia-1">JOUER</button></a>
             </article>
+
             <section>
                 <img src="ressources/sarah-arista-w_sSb1coQkE-unsplash.jpeg" alt="photo de pots de peintures">
             </section>
 
         </section>
 
-
+<!-- Espace de jeu -->
 
         <section id="main_grid_2">
 
@@ -136,7 +138,6 @@
             <article id="win-message">
 
                 <button type="button" id="score-reveal">Afficher le score</button>
-
                 <h1 id="h1-message">Votre Score de bonnes couleurs: </h1>
 
                 <div id="conteneur-score">
@@ -146,13 +147,12 @@
                 <button type="button" id="go-ia-2">Rejouer</button>
 
             </article>
-
         </section>
 
         <footer>
 
-            <div><a href="https://github.com/ExploryKod/mastermind"><img src="ressources/GitHub_Logo.png"
-                        alt="See on Github"></a></div>
+            <div><a href="https://github.com/ExploryKod/mastermind"><img src="ressources/GitHub_Logo.png"alt="See on Github"></a></div>
+
             <p> Created by Amaury Franssen <span>&#169</span> 2022 </p>
         </footer>
 
@@ -164,37 +164,3 @@
 </html>
 
 
-<!-- Connaître l'option choisie par l'utilisateur grâce à JavaScript
-Pour utiliser select en JavaScript, et savoir quelle option l'utilisateur a choisie, on utilise l'attribut selectedIndex (défini dans DOM).
-Si la balise select a pour nom "couleur", l'instruction suivante affiche le numéro de l'option choisie, en partant de zéro:
-document.forms[0].couleur.selectedIndex;
-Et pour accéder aux valeurs, avec le tableau options:
-var object = document.forms[0].couleur;
-var index = object.selectedIndex;
-var value =  object.options[index].value;
-var content = object.options[index].text;
-On peut aussi choisir une option à partir de code JavaScript:
-document.forms[0].couleur.selectedIndex = 3; 
-La gestion dynamique des listes en JavaScript est développée dans l'article Select dynamique.
-Le code JavaScript:
-function receive()
-{
-  var parameters = location.search.substring(1).split("&");
-  var temp = parameters[0].split("=");
-  varname = unescape(temp[0]);
-  if(varname == "") return;
-  value = unescape(temp[1]);
-  alert(varname + "=" + value);
-}
-window.onload=receive;
-Le code HTML avec la méthode GET pour avoir les données de formulaire dans l'URL:
-<form name="form1" method="get" action="select.php">
-  <select name="couleur" id="couleur" multiple size="4">
-    <option>orange</option>
-    <option selected>bleu</option>
-    <option>vert</option>
-    <option>rouge</option>
-  </select>
-  <input type="submit" value="Envoyer">
-  <input type="button" value="Javascript" onClick="show()">
-</form>-->

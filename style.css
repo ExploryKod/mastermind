@@ -1,8 +1,14 @@
 
+
+@import "variables.css";
+
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+
 /* font-family: 'Lato', sans-serif; */
+
 /* Photo by Sarah Arista</a> on <a href="https://unsplash.com/s/photos/colorful?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
    */
+
 :root {
     --color_background :rgb(252, 243, 237);
     --color-orange:rgb(247, 199, 177);
@@ -11,7 +17,6 @@
     --text_black:rgb(38, 0, 27);
     --light:rgb(255, 245, 183);
     --CTA_color : rgb(78, 110, 21);
-
 }
 
 * {
@@ -20,8 +25,7 @@
     box-sizing: border-box;
     background-color: var(--color_background);
 }
-/* Commentaire apprendre : le body n'ayant pas d'élement parent, mettre le height du body à 100 vh permet d'éviter l'écrasement. Fixe le body à une certaine hauteur.
-Aussi : mettre des colonnes/row fixes permet d'éviter des chevauchement, mettre des % représente un risque dans les chevauchements. */
+
 body {
     height:200vh;
     width:100%;
@@ -29,23 +33,7 @@ body {
     line-height: 1.5;
 }
 
-footer {
-    text-decoration: none;
-    color:var(--text-black);
-    grid-column:2;
-    grid-row:5;
-
-    display: flex;
-    justify-content: space-between;
-}
-
-footer img {
-    width:5em;
-    height: auto;
-}
-
 /* MAIN */
-
 
 main {
       display:grid;
@@ -104,7 +92,6 @@ main {
 #main_grid_2 {
     grid-column: 2;
     grid-row:2;
-    /* border:0.5em solid var(--color_red); */
     display:flex;
     flex-flow: column wrap;
     align-items:center;
@@ -139,7 +126,6 @@ select:focus {
 }
 
 #titre_choix {
-    /* border:1px solid black; */
     padding:1em;
     margin-top: 1em;
 }
@@ -155,7 +141,7 @@ form {
 }
 
 #form_choix_1 {
-    /* background-color: var(--light); */
+
    
     border-radius: 20px;
     padding:1em;
@@ -201,29 +187,6 @@ form {
 }
 
 
-/* MAIN-GRID 3 */
-
-/* <section id="main_grid_3">
-<article id="user-result">
-    <h2>Vos couleurs</h2>
-    <div id="conteneur-voscouleurs">
-        <div id="voscouleurs-1"></div>
-        <div id="voscouleurs-2"></div>
-        <div id="voscouleurs-3"></div>
-        <div id="voscouleurs-4"></div>
-    </div> 
-</article>
-<article class="ia-result">
-    <h2>Couleurs à trouver</h2>
-</article>
-<article id="win-message">
-    <h1 id="h1-message">Votre Score de bonnes couleurs: </h1>
-    <ul id="playerScore">
-    </ul>
-</article>
-</section> */
-
-
 #main_grid_3 {
     grid-column: 2;
     grid-row: 3;
@@ -235,19 +198,12 @@ form {
     grid-gap:3px; 
 }
 
-#user-result {
-    grid-column: 1;
-    justify-self: center;
-    align-self: start;
-}
 
-#user-result div div {
-    border: 2px solid rgb(230, 228, 228);
-    border-radius: 1em 0.5em;
-}
+/* Section to check user score and replay */
 
 #win-message {
-    /* border: 1px solid rgb(230, 228, 228); */
+    width:100%;
+    height:auto;
     border-radius: 8px;
     background-color: var(--light);
     padding: 1em; 
@@ -266,6 +222,19 @@ form {
     background-color: var(--light);
 }
 
+/* Showing user and IA colors : containment boxes */
+
+#user-result {
+    grid-column: 1;
+    justify-self: center;
+    align-self: start;
+}
+
+#user-result div div {
+    border: 2px solid rgb(230, 228, 228);
+    border-radius: 1em 0.5em;
+}
+
 #ia-result {
     grid-column: 3;  
     justify-self: center;
@@ -277,9 +246,7 @@ form {
     border-radius: 1em 0.5em;
 }
 
-/* Affichage couleurs de l'utilisateur */
-
-#conteneur-voscouleurs {
+#conteneur-voscouleurs, #conteneur-IAcouleurs {
     display:grid;
     height: auto;
     grid-template-columns: 50px 50px 50px 50px;
@@ -287,6 +254,8 @@ form {
     grid-gap:0.8em;
     margin: 20px auto;
 }
+
+/* User colors */
 
 #voscouleurs-1 {
     background-color: var(--light);
@@ -306,16 +275,7 @@ form {
     grid-column: 4;
 }
 
-/* Affichage couleurs de l'IA */
-
-#conteneur-IAcouleurs {
-    display:grid;
-  
-    grid-template-columns: 50px 50px 50px 50px;
-    grid-template-rows: 5rem;
-    grid-gap:0.8em;
-    margin: 20px auto;
-}
+/* IA colors */
 
 #IAcouleurs-1 {
     background-color: var(--light);
@@ -336,18 +296,14 @@ form {
     grid-column: 4;
 }
 
-/* Player score (3rd grid-item of main-grid-3)*/
-/* <article id="win-message">
-<h1 id="h1-message">Votre Score de bonnes couleurs: </h1>
-<div id="playerScore">
-</div>
-</article> */
+/* Showing user score */
 
 #conteneur-score {
     display:flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid var(--CTA_color);
+    border: 2px solid var(--color-orange);
+    background-color: var(--color-orange);
     height:5rem;
     width:5rem;
     border-radius: 2.5rem;
@@ -355,8 +311,7 @@ form {
     
 }
 
-#conteneur-score:hover, #player-score:hover {
-    
+#conteneur-score:hover, #player-score:hover {  
     cursor:pointer;
 }
 
@@ -367,7 +322,7 @@ form {
 }
 
 
-/* input customizing */
+/* input customization */
 
 button {
     position:relative;
@@ -382,3 +337,19 @@ button {
     
 }
 
+/* Footer customization */
+
+footer {
+    text-decoration: none;
+    color:var(--text-black);
+    grid-column:2;
+    grid-row:5;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+footer img {
+    width:5em;
+    height: auto;
+}
