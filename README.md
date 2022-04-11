@@ -1,6 +1,6 @@
 # Jeu de couleurs 
 
-Il s'agit d'un mastermind simplifié où vous n'avez qu'une rangée de couleur à trouver.<br/> 
+Il s'agit d'un mastermind simplifié où vous n'avez qu'une rangée de couleurs à trouver.<br/> 
 
 Vous pouvez accéder au jeu via le lien en haut à droite de la page d'accueil du repo.
 
