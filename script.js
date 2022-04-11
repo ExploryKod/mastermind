@@ -3,7 +3,11 @@
 
 let playerScoreInfo = document.getElementById("playerScore");
 let conteneurScore = document.querySelector("#conteneur-score");
+
 let validationBtn = document.querySelector("#go");
+let revealBtnDesktop = document.querySelector("#go-reveal-1");
+let revealBtnMobile = document.querySelector("#go-reveal-2");
+
 let activeColor = "orange";
 let cssVariables = document.querySelector(':root');
 let cssVariableStyle = getComputedStyle(cssVariables);
@@ -38,10 +42,17 @@ function randomSequence() {
     playerColorFour.style.backgroundColor = "white";
     playerScoreInfo.innerHTML = "";
     
+    revealBtnMobile.style.backgroundColor = ctaColorVariable;
+    revealBtnMobile.style.color = "white";
+    revealBtnMobile.innerHTML = "Réveler le jeu";
 
-   
+    revealBtnDesktop.style.backgroundColor = ctaColorVariable;
+    revealBtnDesktop.style.color = "white";
+    revealBtnDesktop.innerHTML = "Réveler le jeu";
+
     validationBtn.style.backgroundColor = ctaColorVariable;
     validationBtn.style.color = "white";
+    validationBtn.innerHTML = "Valider vos choix";
     
     let sequence = [];
 
@@ -88,10 +99,18 @@ function userSequenceInputs(){
 
 function revealIA() {
 
-iaColorOne.style.backgroundColor = IAsequence[0];
-iaColorTwo.style.backgroundColor = IAsequence[1];
-iaColorThree.style.backgroundColor = IAsequence[2];
-iaColorFour.style.backgroundColor = IAsequence[3];
+    iaColorOne.style.backgroundColor = IAsequence[0];
+    iaColorTwo.style.backgroundColor = IAsequence[1];
+    iaColorThree.style.backgroundColor = IAsequence[2];
+    iaColorFour.style.backgroundColor = IAsequence[3];
+
+    revealBtnMobile.style.backgroundColor = activeColor;
+    revealBtnMobile.style.color = "black";
+    revealBtnMobile.innerHTML = "Jeu révélé";
+
+    revealBtnDesktop.style.backgroundColor = activeColor;
+    revealBtnDesktop.style.color = "black";
+    revealBtnDesktop.innerHTML = "Jeu révélé";
 
 }
 
@@ -119,7 +138,8 @@ document.querySelector("#go-ia-1").onclick = randomSequence;
 document.querySelector("#go-ia-2").onclick = randomSequence;
 validationBtn.onclick = userSequenceInputs;
 document.querySelector("#score-reveal").onclick = compareDatas;
-document.querySelector(".go-reveal").onclick = revealIA;
+revealBtnDesktop.onclick = revealIA;
+revealBtnMobile.onclick = revealIA;
 
 
 
