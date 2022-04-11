@@ -1,25 +1,19 @@
-
-@import './media-queries.css';
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
-
-/* font-family: 'Lato', sans-serif; */
-
-/* Photo by Sarah Arista</a> on <a href="https://unsplash.com/s/photos/colorful?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-   */
-
-/* Introduction image an mobile : Photo by <a href="https://unsplash.com/@sharonp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sharon Pittaway</a> on <a href="https://unsplash.com/s/photos/colors-of-life?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-   */
+/* Sources: */
+/* Photo by Sarah Arista</a> on <a href="https://unsplash.com/s/photos/colorful?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>*/
+/* Introduction image an mobile : Photo by <a href="https://unsplash.com/@sharonp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sharon Pittaway</a> on <a href="https://unsplash.com/s/photos/colors-of-life?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>*/
 
 :root {
     --color_background :rgb(252, 243, 237);
-    --color-orange:rgb(247, 199, 177);
-    --color_yellow:rgb(255, 202, 3);
-    --color_more-yellow:rgb(255, 243, 35);
+    
+    --color-yellow:rgb(255, 202, 3);
+    --color-more-yellow:rgb(255, 243, 35);
     --text_black:rgb(38, 0, 27);
     --light:rgb(255, 245, 183);
+
     --CTA_color : rgb(78, 110, 21);
-    --select-button: yellowgreen;
+    --color-hover:rgb(35, 49, 9);
+   
+    --select-button: rgb(155, 206, 55);
 }
 
 * {
@@ -106,11 +100,13 @@ main {
     grid-column: 2;
     grid-row:2;
     display:flex;
-    flex-flow: column wrap;
+    flex-direction: column;
+    justify-content: center;
     align-items:center;
     width:100%;
-    height:50vh; 
-    margin: 0 auto;   
+    height:40vh; 
+    margin: 0 auto; 
+     
 }
 
 label {
@@ -126,12 +122,19 @@ select {
     padding:0.2rem;
     border-radius:1em;
     background-color: transparent; 
-    border: 1px solid var(--select-button) ;
-    border-top: 2px solid var(--select-button);
+    border: 1px solid var(--CTA_color) ;
+    border-top: 2px solid var(--CTA_color);
     color: var(--text_black);
     
     cursor:pointer;
     text-align:center;
+}
+
+select:hover {
+    background-color: var(--CTA_color);
+    color: white;
+    border-color: var(--CTA_color);
+    
 }
 
 select:focus {
@@ -146,11 +149,11 @@ select:focus {
 form {
     width:100%;
     display:grid;
-    grid-template-columns: 12em 12em 12em 12em;
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(4, 10em);
+    grid-template-rows: auto 1fr;
     gap:1em;
     justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 
 #form-choix-1 {
@@ -189,15 +192,20 @@ form {
 }
 
 #form-input{
+    width:auto; 
     display:flex;
     padding:0.5em;
     grid-column:1 / span 4;
     grid-row:2;
     justify-self: center; 
-    align-self: start;
-    text-align: center;     
+    align-self: center;
+    text-align: center; 
+        
 }
 
+#go {
+    margin-right:2em;
+}
 
 #main-grid-3 {
     grid-column: 2;
@@ -311,7 +319,7 @@ form {
     justify-content: center;
     align-items: center;
     border: 2px solid var(--CTA_color);
-    background-color: var(--color_more-yellow);
+    background-color: var(--color-more-yellow);
     height:5rem;
     width:5rem;
     border-radius: 2.5rem;
@@ -341,9 +349,13 @@ button {
     
 }
 
+button:hover {
+    background-color: var(--color-hover);
+}
+
 /* No display of this button on large screen */
 
-#go-reveal-2 {
+#go-reveal-2, #link-reveal-btn {
     display:none;
 }
 

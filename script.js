@@ -1,8 +1,13 @@
 
 // =============== html elements =================
 
-playerScoreInfo = document.getElementById("playerScore");
-conteneurScore = document.querySelector("#conteneur-score");
+let playerScoreInfo = document.getElementById("playerScore");
+let conteneurScore = document.querySelector("#conteneur-score");
+let validationBtn = document.querySelector("#go");
+let activeColor = "orange";
+let cssVariables = document.querySelector(':root');
+let cssVariableStyle = getComputedStyle(cssVariables);
+let ctaColorVariable = cssVariableStyle.getPropertyValue('--CTA_color');
 
 let iaColorOne = document.getElementById('IAcouleurs-1');
 let iaColorTwo = document.getElementById('IAcouleurs-2');
@@ -32,6 +37,11 @@ function randomSequence() {
     playerColorThree.style.backgroundColor = "white";
     playerColorFour.style.backgroundColor = "white";
     playerScoreInfo.innerHTML = "";
+    
+
+   
+    validationBtn.style.backgroundColor = ctaColorVariable;
+    validationBtn.style.color = "white";
     
     let sequence = [];
 
@@ -64,6 +74,10 @@ function userSequenceInputs(){
     playerColorTwo.style.backgroundColor = secondInput;
     playerColorThree.style.backgroundColor = thirdInput;
     playerColorFour.style.backgroundColor = fourthInput;
+
+    validationBtn.style.backgroundColor = activeColor;
+    validationBtn.style.color = "black";
+    validationBtn.innerHTML = "Sequence validée";
 
     userDatas = userSequence;
     
@@ -103,7 +117,7 @@ function compareDatas() {
 
 document.querySelector("#go-ia-1").onclick = randomSequence;
 document.querySelector("#go-ia-2").onclick = randomSequence;
-document.querySelector("#go").onclick = userSequenceInputs;
+validationBtn.onclick = userSequenceInputs;
 document.querySelector("#score-reveal").onclick = compareDatas;
 document.querySelector(".go-reveal").onclick = revealIA;
 
