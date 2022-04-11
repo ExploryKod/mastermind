@@ -1,12 +1,14 @@
 
-
-@import "variables.css";
+@import './media-queries.css';
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
 /* font-family: 'Lato', sans-serif; */
 
 /* Photo by Sarah Arista</a> on <a href="https://unsplash.com/s/photos/colorful?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+   */
+
+/* Introduction image an mobile : Photo by <a href="https://unsplash.com/@sharonp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sharon Pittaway</a> on <a href="https://unsplash.com/s/photos/colors-of-life?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
    */
 
 :root {
@@ -32,11 +34,14 @@ body {
     width:100%;
     font-family: 'Orkney', 'sans-serif';
     line-height: 1.5;
+    display:grid;
+    grid-template-rows: auto 5vh;
 }
 
 /* MAIN */
 
 main {
+      grid-row: 1;
       display:grid;
       grid-template-columns: 10vw 80vw 10vw;
       grid-template-rows: 100vh 40vh 40vh 5vh 5vh;
@@ -44,44 +49,47 @@ main {
       align-content: start;
 }
 
-#main_grid_1 {
+#main-grid-1 {
     grid-column: 2 / span 2;
     display: grid;
     grid-template-columns: 40vw 40vw;
 }
 
-#main_grid_1 article {
+#main-grid-1 article {
     grid-column:1;
 }
 
-#main_grid_1 article h1 {
+#main-grid-1 article h1 {
     margin-top: 2rem;
-    font-size: 36px;
+    font-size: 2.5em;
     line-height: 1.5;
 }
 
-#main_grid_1 article p {
+#main-grid-1 article p {
     margin-top:1em;
+    font-size:1em;
     line-height: 1.5;
 }
 
-#main_grid_1 article a button {
+#main-grid-1 article a button {
     padding:1em;
     position: relative;
     left:50%;
     right:50%;
     top:20%;
     bottom:50%;
+    font-size: 1em;
 }
 
-#main_grid_1 section {
+#main-grid-1 section {
     width: 20vw;
     grid-column:2 / span 2;
     grid-row:1;
     margin: 0 auto;
 }
 
-#main_grid_1 section img {
+#main-grid-1 section img:nth-of-type(1) {
+    display:block;
     width: auto;
     height: 100vh;
     justify-self: end;
@@ -89,8 +97,12 @@ main {
     padding:0;
 }
 
+#main-grid-1 section img:nth-of-type(2) {
+    display:none;
+}
 
-#main_grid_2 {
+
+#main-grid-2 {
     grid-column: 2;
     grid-row:2;
     display:flex;
@@ -110,9 +122,9 @@ label {
 select {
     display:block;
     position:relative;
-    margin:15px auto;
+    margin:0.8em auto;
     padding:0.2rem;
-    border-radius:30px;
+    border-radius:1em;
     background-color: transparent; 
     border: 1px solid var(--select-button) ;
     border-top: 2px solid var(--select-button);
@@ -126,7 +138,7 @@ select:focus {
     outline:none;
 }
 
-#titre_choix {
+#titre-choix {
     padding:1em;
     margin-top: 1em;
 }
@@ -141,10 +153,9 @@ form {
     align-content: center;
 }
 
-#form_choix_1 {
+#form-choix-1 {
 
-   
-    border-radius: 20px;
+    border-radius: 2em;
     padding:1em;
     grid-column: 1;
     grid-row: 1;
@@ -152,25 +163,25 @@ form {
    
 }
 
-#form_choix_2 {
+#form-choix-2 {
 
-    border-radius: 20px;
+    border-radius: 2em;
     padding:1em;
     grid-column: 2;
     grid-row:1;
     text-align: center;
 }
-#form_choix_3 {
+#form-choix-3 {
 
-    border-radius: 20px;
+    border-radius: 2em;
     padding:1em;
     grid-column: 3;
     grid-row:1;
     text-align: center;
 }
-#form_choix_4 {
+#form-choix-4 {
  
-    border-radius: 20px;
+    border-radius: 2em;
     padding:1em;
     grid-column: 4;
     grid-row:1;
@@ -188,7 +199,7 @@ form {
 }
 
 
-#main_grid_3 {
+#main-grid-3 {
     grid-column: 2;
     grid-row: 3;
     display:grid;
@@ -196,7 +207,7 @@ form {
     height: auto;
     
     width: 100%; 
-    grid-gap:3px; 
+    grid-gap:0.2em; 
 }
 
 
@@ -205,7 +216,7 @@ form {
 #win-message {
     width:100%;
     height:auto;
-    border-radius: 8px;
+    border-radius: 0.5em;
     background-color: var(--light);
     padding: 1em; 
     grid-column: 2;
@@ -216,7 +227,7 @@ form {
     display:flex;
     flex-direction: column;
     justify-content: space-between;
-    align-content: center;
+    align-items:center;
 }
 
 #h1-message {
@@ -232,9 +243,9 @@ form {
     align-self: start;
 }
 
-#user-result div div {
+#user-result div div, #ia-result div div {
     border: 2px solid rgb(230, 228, 228);
-    border-radius: 1em 0.5em;
+    border-radius: 50em;
 }
 
 #ia-result {
@@ -243,18 +254,13 @@ form {
     align-self: start;
 }
 
-#ia-result div div {
-    border: 2px solid rgb(230, 228, 228);
-    border-radius: 1em 0.5em;
-}
-
 #conteneur-voscouleurs, #conteneur-IAcouleurs {
     display:grid;
     height: auto;
-    grid-template-columns: 50px 50px 50px 50px;
-    grid-template-rows: 5rem;
+    grid-template-columns: 3em 3em 3em 3em;
+    grid-template-rows: 3rem;
     grid-gap:0.8em;
-    margin: 20px auto;
+    margin: 2em auto;
 }
 
 /* User colors */
@@ -309,7 +315,7 @@ form {
     height:5rem;
     width:5rem;
     border-radius: 2.5rem;
-    margin: 20px auto;
+    margin: 2em auto;
     
 }
 
@@ -335,14 +341,19 @@ button {
     
 }
 
+/* No display of this button on large screen */
+
+#go-reveal-2 {
+    display:none;
+}
+
 /* Footer customization */
 
 footer {
     text-decoration: none;
     color:var(--text-black);
-    grid-column:2;
-    grid-row:5;
-
+    grid-row:2;
+    margin: 1vh 10vw;
     display: flex;
     justify-content: space-between;
 }
@@ -351,3 +362,4 @@ footer img {
     width:5em;
     height: auto;
 }
+

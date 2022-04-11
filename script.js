@@ -1,6 +1,18 @@
 
+// =============== html elements =================
+
 playerScoreInfo = document.getElementById("playerScore");
-conteneurScore = document.querySelector("#conteneur-score")
+conteneurScore = document.querySelector("#conteneur-score");
+
+let iaColorOne = document.getElementById('IAcouleurs-1');
+let iaColorTwo = document.getElementById('IAcouleurs-2');
+let iaColorThree = document.getElementById('IAcouleurs-3');
+let iaColorFour = document.getElementById('IAcouleurs-4');
+
+let playerColorOne = document.getElementById('voscouleurs-1');
+let playerColorTwo = document.getElementById('voscouleurs-2');
+let playerColorThree = document.getElementById('voscouleurs-3');
+let playerColorFour = document.getElementById('voscouleurs-4');
 
 // ======= Color sequences ==========
 
@@ -9,6 +21,17 @@ let iacouleurs = ["orange","green","red","blue","grey","purple","teal","yellow",
 let IAsequence = []
 
 function randomSequence() {
+
+    iaColorOne.style.backgroundColor = "white";
+    iaColorTwo.style.backgroundColor = "white";
+    iaColorThree.style.backgroundColor = "white";
+    iaColorFour.style.backgroundColor = "white";
+
+    playerColorOne.style.backgroundColor = "white";
+    playerColorTwo.style.backgroundColor = "white";
+    playerColorThree.style.backgroundColor = "white";
+    playerColorFour.style.backgroundColor = "white";
+    playerScoreInfo.innerHTML = "";
     
     let sequence = [];
 
@@ -37,24 +60,24 @@ function userSequenceInputs(){
     
     userSequence.push(firstInput,secondInput,thirdInput,fourthInput);
 
-    document.getElementById('voscouleurs-1').style.backgroundColor = firstInput;
-    document.getElementById('voscouleurs-2').style.backgroundColor = secondInput;
-    document.getElementById('voscouleurs-3').style.backgroundColor = thirdInput;
-    document.getElementById('voscouleurs-4').style.backgroundColor = fourthInput;
+    playerColorOne.style.backgroundColor = firstInput;
+    playerColorTwo.style.backgroundColor = secondInput;
+    playerColorThree.style.backgroundColor = thirdInput;
+    playerColorFour.style.backgroundColor = fourthInput;
 
     userDatas = userSequence;
     
     return userDatas;
 }
 
-// ============= Showing IA color
+// ============= IA colors : show and compare ==================
 
 function revealIA() {
 
-document.getElementById('IAcouleurs-1').style.backgroundColor = IAsequence[0];
-document.getElementById('IAcouleurs-2').style.backgroundColor = IAsequence[1];
-document.getElementById('IAcouleurs-3').style.backgroundColor = IAsequence[2];
-document.getElementById('IAcouleurs-4').style.backgroundColor = IAsequence[3];
+iaColorOne.style.backgroundColor = IAsequence[0];
+iaColorTwo.style.backgroundColor = IAsequence[1];
+iaColorThree.style.backgroundColor = IAsequence[2];
+iaColorFour.style.backgroundColor = IAsequence[3];
 
 }
 
@@ -82,7 +105,7 @@ document.querySelector("#go-ia-1").onclick = randomSequence;
 document.querySelector("#go-ia-2").onclick = randomSequence;
 document.querySelector("#go").onclick = userSequenceInputs;
 document.querySelector("#score-reveal").onclick = compareDatas;
-document.querySelector("#go-reveal").onclick = revealIA;
+document.querySelector(".go-reveal").onclick = revealIA;
 
 
 

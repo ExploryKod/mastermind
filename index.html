@@ -13,31 +13,32 @@
 <body>
 
     <main>
-        <section id="main_grid_1">
+        <section id="main-grid-1">
 
             <article>
-                <h1>Bienvenue sur le mastermind</h1>
+                <h1>Bienvenue</h1>
                 <p> En solitaire ou en équipe, jouer avec des couleurs est toujours un plaisir, invitez-vous à la fête ! A vous de
                     trouver les quatres couleurs dans le bon ordre choisis par l'ordinateur.</p>
-                <a href="#main_grid_2"><button type="button" id="go-ia-1">JOUER</button></a>
+                <a href="#main-grid-2"><button type="button" id="go-ia-1">JOUER</button></a>
             </article>
 
             <section>
                 <img src="ressources/sarah-arista-w_sSb1coQkE-unsplash.jpeg" alt="photo de pots de peintures">
+                <img src="ressources/introduction-image.png" alt="photo de fleur colorée">
             </section>
 
         </section>
 
 <!-- Espace de jeu -->
 
-        <section id="main_grid_2">
+        <section id="main-grid-2">
 
-            <article id="titre_choix">
-                <h2>Choississez 4 couleurs en validant vos choix: </h2>
+            <article id="titre-choix">
+                <h2>Choississez 4 couleurs: </h2>
             </article>
 
             <form>
-                <article id="form_choix_1">
+                <article id="form-choix-1">
                     <label for="couleur_1">Première couleur:</label>
                     <select name="player-values" id="couleur_1" size="1">
                         <option value="orange">orange</option>
@@ -54,7 +55,7 @@
                     </select>
                 </article>
 
-                <article id="form_choix_2">
+                <article id="form-choix-2">
                     <label for="couleur_2">Seconde couleur:</label>
                     <select name="player-values" id="couleur_2" size="1">
                         <option value="orange">orange</option>
@@ -70,7 +71,7 @@
                         <option value="purple">violet</option>
                     </select>
                 </article>
-                <article id="form_choix_3">
+                <article id="form-choix-3">
                     <label for="couleur_3">Troisième couleur:</label>
                     <select name="player-values" id="couleur_3" size="1">
                         <option value="orange">orange</option>
@@ -87,7 +88,7 @@
                     </select>
                 </article>
 
-                <article id="form_choix_4">
+                <article id="form-choix-4">
                     <label for="couleur_4">Quatrième couleur:</label>
                     <select name="player-values" id="couleur_4" size="1">
                         <option value="orange">orange</option>
@@ -106,15 +107,17 @@
 
                 <article id="form-input">
                     <button type="button" id="go">Valider votre séquence</button>
-                    <button type="button" id="go-reveal">Réveler le jeu</button>
+                    <button type="button" id="go-reveal-1" class="go-reveal">Réveler le jeu</button>
+                    <a href="#main-grid-3"><button type="button" id="go-reveal-2" class="go-reveal">Réveler le jeu</button></a>
+        
                 </article>
 
             </form>
 
         </section>
 
-        <section id="main_grid_3">
-
+        <section id="main-grid-3">
+            
             <article id="user-result">
                 <h2>Vos couleurs:</h2>
                 <div id="conteneur-voscouleurs">
@@ -138,7 +141,7 @@
             <article id="win-message">
 
                 <button type="button" id="score-reveal">Afficher le score</button>
-                <h1 id="h1-message">Votre Score de bonnes couleurs: </h1>
+                <h1 id="h1-message">Votre Score:</h1>
 
                 <div id="conteneur-score">
                     <p id="playerScore"></p>
@@ -149,6 +152,8 @@
             </article>
         </section>
 
+    </main>
+
         <footer>
 
             <div><a href="https://github.com/ExploryKod/mastermind"><img src="ressources/GitHub_Logo.png"alt="See on Github"></a></div>
@@ -156,7 +161,7 @@
             <p> Créé par Amaury Franssen <span>&#169</span> 2022 </p>
         </footer>
 
-    </main>
+   
 
     <script src="script.js"></script>
 </body>
