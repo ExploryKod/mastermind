@@ -1,8 +1,10 @@
 # Jeu de couleurs 
 
-Il s'agit d'un mastermind simplifié où vous n'avez qu'une rangée de couleurs à trouver.<br/> 
+Il s'agit d'un jeu proche du mastermind où vous n'avez qu'une rangée de couleurs à trouver pour faire des parties rapides.<br/> 
 
-Vous pouvez accéder au jeu via le lien en haut à droite de la page d'accueil du repo.
+Découvrez le jeu en ligne <a href="https://explorykod.github.io/mastermind/">ici</a>.
+
+Le jeu est en cours de conception, il est prévu d'en améliorer les fonctionnalités et l'apparence.
 
 ## But du projet
 
