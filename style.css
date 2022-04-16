@@ -3,17 +3,18 @@
 /* Introduction image an mobile : Photo by <a href="https://unsplash.com/@sharonp?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sharon Pittaway</a> on <a href="https://unsplash.com/s/photos/colors-of-life?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>*/
 
 :root {
-    --color_background :rgb(252, 243, 237);
+    --color_background :rgb(255, 243, 35);
     
     --color-yellow:rgb(255, 202, 3);
     --color-more-yellow:rgb(255, 243, 35);
     --text_black:rgb(38, 0, 27);
-    --light:rgb(255, 245, 183);
 
-    --CTA_color : rgb(78, 110, 21);
-    --color-hover:rgb(35, 49, 9);
+    --light:rgba(255, 255, 255, 0.5);
+
+    --CTA_color : rgb(58, 58, 58);
+    --color-hover:rgb(0, 0, 0);
    
-    --select-button: rgb(155, 206, 55);
+    --select-button: rgb(0, 0, 0);
 }
 
 * {
@@ -38,7 +39,7 @@ main {
       grid-row: 1;
       display:grid;
       grid-template-columns: 10vw 80vw 10vw;
-      grid-template-rows: 100vh 40vh 40vh 5vh 5vh;
+      grid-template-rows: 100vh 45vh 35vh 5vh 5vh;
     
       align-content: start;
 }
@@ -46,7 +47,7 @@ main {
 #main-grid-1 {
     grid-column: 2 / span 2;
     display: grid;
-    grid-template-columns: 40vw 40vw;
+    grid-template-columns: 40vw 50vw;
 }
 
 #main-grid-1 article {
@@ -199,7 +200,8 @@ form {
     grid-row:2;
     justify-self: center; 
     align-self: center;
-    text-align: center; 
+    text-align: center;
+  
         
 }
 
@@ -226,6 +228,7 @@ form {
     height:auto;
     border-radius: 0.5em;
     background-color: var(--light);
+    box-shadow: 0 5px 5px 5px rgb(0 0 0 / 30%);
     padding: 1em; 
     grid-column: 2;
     grid-row:1;
@@ -239,7 +242,7 @@ form {
 }
 
 #h1-message {
-    background-color: var(--light);
+    background-color: transparent;
     margin: 0 auto;
 }
 
@@ -252,7 +255,7 @@ form {
 }
 
 #user-result div div, #ia-result div div {
-    border: 2px solid rgb(230, 228, 228);
+    border: 2px solid var(--CTA_color);
     border-radius: 50em;
 }
 
@@ -340,7 +343,7 @@ button {
     position:relative;
     margin:1em;
     padding:0.8em;
-    border: 0.2em solid white;
+    border:none;
     border-radius:10px;
     background-color: var(--CTA_color);
     color: white;
